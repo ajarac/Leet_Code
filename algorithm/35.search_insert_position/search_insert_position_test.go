@@ -7,7 +7,7 @@ type input struct {
 	target int
 }
 
-func TestBinarySearch(t *testing.T) {
+func TestSearchInsertPosition(t *testing.T) {
 	var tests = []struct {
 		input    input
 		expected int
@@ -18,7 +18,7 @@ func TestBinarySearch(t *testing.T) {
 	}
 	for _, test := range tests {
 		if output := searchInsert(test.input.nums, test.input.target); output != test.expected {
-			t.Error("Binary Search Test Failed: {} inputted, {} expected, received: {}", test.input, test.expected, output)
+			t.Error("TestSearchInsertPosition Failed: {} inputted, {} expected, received: {}", test.input, test.expected, output)
 		}
 	}
 }
