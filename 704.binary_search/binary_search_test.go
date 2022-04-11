@@ -14,9 +14,9 @@ func TestBinarySearch(t *testing.T) {
 		input    input
 		expected int
 	}{
-		{input{[]int{1, 3, 5, 6}, 5}, 2},
-		{input{[]int{1, 3, 5, 6}, 2}, 1},
-		{input{[]int{1, 3, 5, 6}, 7}, 4},
+		{input{[]int{-1, 0, 3, 5, 9, 12}, 9}, 4},
+		{input{[]int{-1, 0, 3, 5, 9, 12}, 2}, -1},
+		{input{[]int{-1, 0, 3, 5, 9, 12}, 13}, -1},
 	}
 	for _, test := range tests {
 		if output := search(test.input.nums, test.input.target); output != test.expected {
