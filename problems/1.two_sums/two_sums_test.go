@@ -1,6 +1,7 @@
 package two_sums
 
 import (
+	"leetcode/utils"
 	"testing"
 )
 
@@ -20,20 +21,8 @@ func TestTwoSum(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		if output := twoSum(test.input.nums, test.input.target); Equal(output, test.expected) == false {
+		if output := twoSum(test.input.nums, test.input.target); utils.Equal(output, test.expected) == false {
 			t.Error("TestTwoSum Failed: {} inputted, {} expected, received: {}", test.input, test.expected, output)
 		}
 	}
-}
-
-func Equal(a, b []int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i, v := range a {
-		if v != b[i] {
-			return false
-		}
-	}
-	return true
 }
