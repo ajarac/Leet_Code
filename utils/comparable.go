@@ -1,6 +1,6 @@
 package utils
 
-func Equal(a, b []int) bool {
+func Equal[T comparable](a, b []T) bool {
 	if len(a) != len(b) {
 		return false
 	}
