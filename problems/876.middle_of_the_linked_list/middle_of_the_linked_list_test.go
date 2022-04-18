@@ -1,16 +1,19 @@
 package middle_of_the_linked_list
 
-import "testing"
+import (
+	"leetcode/utils"
+	"testing"
+)
 
 type Test struct {
-	head     *ListNode
-	expected *ListNode
+	head     *utils.ListNode
+	expected *utils.ListNode
 }
 
 func TestMiddleNode(t *testing.T) {
 	var tests = []Test{
-		{buildListNode([]int{1, 2, 3, 4, 5}), buildListNode([]int{3, 4, 5})},
-		{buildListNode([]int{1, 2, 3, 4, 5, 6}), buildListNode([]int{4, 5, 6})},
+		{utils.BuildListNode([]int{1, 2, 3, 4, 5}), utils.BuildListNode([]int{3, 4, 5})},
+		{utils.BuildListNode([]int{1, 2, 3, 4, 5, 6}), utils.BuildListNode([]int{4, 5, 6})},
 	}
 
 	for _, test := range tests {
@@ -18,14 +21,4 @@ func TestMiddleNode(t *testing.T) {
 			t.Error("TestMiddleNode Failed: {} inputted, {} expected, received: {}", test.head, test.expected, output)
 		}
 	}
-}
-
-func buildListNode(list []int) *ListNode {
-	head := &ListNode{list[0], nil}
-	var tmp = head
-	for i := 1; i < len(list); i++ {
-		tmp.Next = &ListNode{list[i], nil}
-		tmp = tmp.Next
-	}
-	return head
 }

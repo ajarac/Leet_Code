@@ -1,11 +1,8 @@
 package middle_of_the_linked_list
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import "leetcode/utils"
 
-func middleNode(head *ListNode) *ListNode {
+func middleNode(head *utils.ListNode) *utils.ListNode {
 	sp, fp := head, head
 
 	for fp != nil && fp.Next != nil {
