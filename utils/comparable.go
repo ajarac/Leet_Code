@@ -23,3 +23,18 @@ func DeepEqual(mat1 [][]int, mat2 [][]int) bool {
 	}
 	return true
 }
+
+func Max(i1 int, i2 int) int {
+	if i1 > i2 {
+		return i1
+	} else {
+		return i2
+	}
+}
+func Min(i1 int, i2 int) int {
+	if i1 < i2 {
+		return i1
+	} else {
+		return i2
+	}
+}
